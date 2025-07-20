@@ -1,0 +1,1 @@
+Script para manter o target IP de um DNS record da Cloudflare atualizado com o IP dinamico do servidor.
