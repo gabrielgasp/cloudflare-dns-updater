@@ -54,12 +54,14 @@ func main() {
 
 	run()
 
+	tc := time.Tick(time.Duration(intervalMinutes) * time.Minute)
+
 	for {
 		select {
 		case <-ctx.Done():
 			log.Println("Shutting down gracefully...")
 			return
-		case <-time.Tick(time.Duration(intervalMinutes) * time.Minute):
+		case <-tc:
 			run()
 		}
 	}
